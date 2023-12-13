@@ -3,3 +3,54 @@
 /* Mobile (480px ~ <= 767px) */
 /* Tablet (768px ~ <= 1200px) */
 /* Desktop (1200px ~ ) */
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .wrap_box {
+    max-width: 100%;
+  }
+
+  .gnb .gnb-list {
+    width: 20%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .wrap_box {
+    max-width: 100%;
+  }
+
+  .gnb {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: auto;
+    height: 56px;
+    transform: translateX(-50%);
+  }
+
+  .gnb .gnb-list {
+    width: 150px;
+  }
+
+  .gnb .gnb-list a {
+    font-size: var(--font-size-16);
+    line-height: var(--font-line-height-16);
+  }
+
+  .header-content {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .header-content .logo {
+    left: 0;
+  }
+
+  .header-left {
+    display: none;
+  }
+
+  .proile-btn {
+    display: block;
+  }
+}
