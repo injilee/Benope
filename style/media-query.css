@@ -4,21 +4,44 @@
 /* Tablet (768px ~ <= 1200px) */
 /* Desktop (1200px ~ ) */
 
+@media screen and (max-width: 479px) {
+  .wrap_box {
+    border: none;
+  }
+
+  /* header */
+
+  /* main */
+  /* slider */
+  .slider-item {
+    min-width: 320px;
+  }
+}
+
+/* Tablet */
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .wrap_box {
     max-width: 100%;
   }
 
+  /* header */
   .gnb .gnb-list {
     width: 20%;
   }
+
+  /* main */
+  .main {
+    width: 65%;
+  }
 }
 
+/* Desktop */
 @media screen and (min-width: 1200px) {
   .wrap_box {
     max-width: 100%;
   }
 
+  /* header */
   .gnb {
     position: absolute;
     left: 50%;
@@ -52,5 +75,11 @@
 
   .proile-btn {
     display: block;
+  }
+
+  /* main */
+  .main {
+    max-width: 600px;
+    margin: 0 auto;
   }
 }
