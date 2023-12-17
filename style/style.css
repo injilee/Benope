@@ -7,6 +7,8 @@
 body {
   font-family: 'SUIT Variable', sans-serif;
   background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body::-webkit-scrollbar {
@@ -48,61 +50,6 @@ button {
   font-size: var(--font-size-14);
   line-height: var(--font-line-height-14);
   color: var(--color-gray);
-}
-
-/* 상품리스트 */
-.prd-content {
-  margin-top: 16px;
-}
-
-.prd-title,
-.sale-percent,
-.price {
-  font-size: var(--font-size-14);
-  line-height: var(--font-line-height-14);
-}
-
-.discount {
-  font-size: var(--font-size-12);
-  line-height: var(--font-line-height-12);
-}
-
-.prd-title {
-  font-weight: 500;
-  color: var(--color-primary);
-}
-
-.sale-percent {
-  font-weight: 700;
-  color: var(--color-orange);
-}
-
-.price {
-  font-weight: 700;
-  color: var(--color-primary);
-}
-
-.discount {
-  color: var(--color-gray);
-  text-decoration-line: line-through;
-}
-
-.prd-img {
-  position: relative;
-}
-
-.prd-img img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-/* 장바구니 담기 버튼 */
-.prd-cart {
-  position: absolute;
-  bottom: 8px;
-  right: 8px;
-  display: block;
-  height: 36px;
 }
 
 /* 텍스트 line 구분 */
