@@ -250,3 +250,16 @@
   white-space: nowrap;
   margin-left: 6px;
 }
+
+/* top 버튼 */
+.top-btn-wrap {
+  position: fixed;
+  bottom: 40px;
+  right: 4%;
+  z-index: 10;
+  transition: bottom 200ms ease-in-out;
+}
+
+.top-btn {
+  display: block;
+}
