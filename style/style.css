@@ -72,6 +72,42 @@ button {
   background-color: var(--color-white);
 }
 
+/* search-box */
+.search-recent {
+  padding-top: 32px;
+}
+
+.search-recent-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 16px;
+}
+
+.recent-title {
+  font-weight: 700;
+  font-size: var(--font-size-16);
+  line-height: var(--font-line-height-16);
+  color: var(--color-primary);
+}
+
+.recent-content {
+  display: flex;
+  margin: 0 20px;
+  overflow: hidden;
+}
+
+.recent-list {
+  margin-right: 8px;
+}
+
+.recent-list img {
+  display: block;
+  width: 112px;
+  height: 100%;
+  border-radius: 10px;
+}
+
 /* header */
 .header {
   position: relative;
