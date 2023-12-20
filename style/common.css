@@ -251,15 +251,74 @@
   margin-left: 6px;
 }
 
+/* 하단 네비게이션 */
+.ft-nav {
+  position: fixed;
+  bottom: 0;
+  max-width: 480px;
+  width: 100%;
+  height: 64px;
+  background-color: var(--color-white);
+  opacity: 1;
+  visibility: visible;
+  transition: all 200ms ease-in-out;
+}
+
+.ft-nav.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.ft-nav-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  border-top: 2px solid var(--color-border);
+}
+
+.ft-nav-list {
+  width: 25%;
+}
+
+.ft-nav-list:first-child span {
+  color: var(--color-orange);
+}
+
+.ft-nav-list a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ft-nav-menu {
+  font-weight: 400;
+  font-size: var(--font-size-12);
+  line-height: var(--font-line-height-12);
+  color: var(--color-footergray);
+  white-space: nowrap;
+  margin-top: 5px;
+}
+
 /* top 버튼 */
 .top-btn-wrap {
   position: fixed;
   bottom: 40px;
   right: 4%;
   z-index: 10;
-  transition: bottom 200ms ease-in-out;
+  transition: opacity 200ms ease-in-out, visibility 200ms ease-in-out;
+  opacity: 1;
+  visibility: visible;
+}
+
+.top-btn-wrap.hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 
 .top-btn {
   display: block;
+  border-radius: 100%;
 }

@@ -43,6 +43,15 @@
   .footer {
     width: 65%;
   }
+
+  /* 하단 네비게이션 */
+  .ft-nav {
+    max-width: 100%;
+  }
+
+  .ft-nav-content {
+    width: 65%;
+  }
 }
 
 /* Desktop */
@@ -101,5 +110,14 @@
   /* footer */
   .footer {
     max-width: 600px;
+  }
+
+  /* 하단 네비게이션 */
+  .ft-nav {
+    max-width: 100%;
+  }
+
+  .ft-nav-content {
+    width: 65%;
   }
 }
