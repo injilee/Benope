@@ -1,3 +1,20 @@
+// 사업자 정보 drawer
+const infoName = document.querySelector('.ft-info-name');
+const infoDownArrow = infoName.querySelector('img');
+const infoList = document.querySelector('.ft-info');
+
+infoName.addEventListener('click', function () {
+  infoList.classList.toggle('is-open');
+
+  if (infoList.classList.contains('is-open')) {
+    infoList.style.paddingBottom = '16px';
+    infoDownArrow.style.transform = 'rotate(180deg)';
+  } else {
+    infoList.style.paddingBottom = '0';
+    infoDownArrow.style.transform = 'rotate(0deg)';
+  }
+});
+
 // top btn
 const topBtnWrap = document.querySelector('.top-btn-wrap');
 const topBtn = document.querySelector('.top-btn');

@@ -682,13 +682,20 @@ button {
 }
 
 .ft-info {
-  padding-bottom: 16px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 200ms ease-in-out;
+}
+
+.ft-info.is-open {
+  max-height: 150px;
 }
 
 .ft-info-name {
   display: flex;
   align-items: center;
   padding-bottom: 16px;
+  cursor: pointer;
 }
 
 .ft-info-name .info-benope {
