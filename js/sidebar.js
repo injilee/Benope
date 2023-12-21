@@ -7,12 +7,14 @@ const overlay = document.querySelector('.overlay');
 function openSidebar() {
   sidebar.classList.add('is-open');
   overlay.classList.add('active');
+  document.body.classList.add('fixbody');
 }
 
 // sidebar 숨기기
 function closeSidebar() {
   sidebar.classList.remove('is-open');
   overlay.classList.remove('active');
+  document.body.classList.remove('fixbody');
 }
 
 menuBtn.addEventListener('click', openSidebar);

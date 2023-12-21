@@ -68,6 +68,18 @@
   visibility: visible;
 }
 
+.fixbody {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.notscroll {
+  overflow: hidden;
+  touch-action: none;
+}
+
 /* 검색창 */
 .search-box {
   position: fixed;

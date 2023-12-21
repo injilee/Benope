@@ -5,6 +5,8 @@
 }
 
 body {
+  position: relative;
+  height: 100%;
   font-family: 'SUIT Variable', sans-serif;
   background-color: var(--color-background);
   -webkit-font-smoothing: antialiased;
