@@ -1,8 +1,29 @@
-// top btn
+const headerMenu = document.querySelector('.header-content');
+const footerMenu = document.querySelector('.ft-nav');
+const gnb = document.querySelector('.gnb');
 const topBtnWrap = document.querySelector('.top-btn-wrap');
 const topBtn = document.querySelector('.top-btn');
 
+let lastScrollY = 0;
 let isHidden = true;
+
+// 상단, 하단 메뉴바 스크롤 방향에 따라 고정
+function getDirectionScroll(scrollY) {
+  const direction = scrollY > lastScrollY ? true : false;
+  lastScrollY = scrollY;
+
+  if (direction && scrollY !== 0) {
+    headerMenu.classList.add('fixed');
+    footerMenu.classList.add('hidden');
+    gnb.style.opacity = '0';
+    document.body.style.top = '56px';
+  } else {
+    headerMenu.classList.remove('fixed');
+    footerMenu.classList.remove('hidden');
+    gnb.style.opacity = '1';
+    document.body.style.top = '0';
+  }
+}
 
 // 이벤트 무한 호출 방지를 위한 throttling
 function throttle(callback, delay = 100) {
@@ -29,7 +50,10 @@ function updateVisibilityButton(scrollY) {
   }
 }
 
-const throttledScrollHandler = throttle(scrollY => updateVisibilityButton(scrollY));
+const throttledScrollHandler = throttle(scrollY => {
+  updateVisibilityButton(scrollY);
+  getDirectionScroll(scrollY);
+});
 
 topBtn.addEventListener('click', function () {
   window.scrollTo({ top: 0, behavior: 'smooth' });
