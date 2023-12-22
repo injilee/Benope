@@ -145,8 +145,20 @@ button {
   position: relative;
   display: flex;
   align-items: center;
+  width: 100%;
   height: 56px;
-  margin: 0 19px;
+  margin: 0 auto;
+  background-color: var(--color-white);
+  z-index: 9;
+  transition: position 0.3ms ease-in-out;
+}
+
+.header-content.fixed {
+  position: fixed;
+  top: 0;
+  max-width: 480px;
+  width: 100%;
+  border-bottom: 2px solid var(--color-border);
 }
 
 .header-content .logo {
@@ -166,6 +178,7 @@ button {
   left: 0;
   display: flex;
   justify-content: flex-start;
+  margin-left: 19px;
 }
 
 .header-left .menu {
@@ -182,6 +195,7 @@ button {
   right: 0;
   display: flex;
   justify-content: flex-end;
+  margin-right: 19px;
 }
 
 .header-right button {
@@ -223,12 +237,14 @@ button {
   position: relative;
   width: 100%;
   height: 40px;
+  z-index: 9;
 }
 
 .gnb .gnb-content {
   display: flex;
   justify-content: center;
   height: 100%;
+  transition: height 0.3ms ease-in-out;
 }
 
 .gnb .gnb-list {

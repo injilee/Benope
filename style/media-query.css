@@ -30,6 +30,13 @@
   }
 
   /* header */
+  .header-content.fixed {
+    position: fixed;
+    top: 0;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
   .gnb .gnb-list {
     width: 20%;
   }
@@ -66,6 +73,31 @@
   }
 
   /* header */
+  .header-content {
+    max-width: 1000px;
+  }
+
+  .header-content.fixed {
+    position: fixed;
+    top: 0;
+    max-width: 100%;
+    width: 100%;
+    padding: 0 50px;
+  }
+
+  .header-content .logo {
+    position: static;
+    transform: none;
+  }
+
+  .header-left {
+    display: none;
+  }
+
+  .header-right {
+    margin-right: 50px;
+  }
+
   .gnb {
     position: absolute;
     left: 50%;
@@ -82,19 +114,6 @@
   .gnb .gnb-list a {
     font-size: var(--font-size-16);
     line-height: var(--font-line-height-16);
-  }
-
-  .header-content {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  .header-content .logo {
-    left: 0;
-  }
-
-  .header-left {
-    display: none;
   }
 
   .proile-btn {
