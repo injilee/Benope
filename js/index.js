@@ -1,4 +1,23 @@
 // 별점 점수에 따라 자동으로 fill-rate width 값 변경하는 함수
+const rate = document.querySelectorAll('.rate');
+
+function updateStarRating() {
+  rate.forEach(item => {
+    const starElement = item.previousElementSibling.lastElementChild;
+    const rateValue = item.textContent.trim();
+    const defaultRate = 5;
+    const fillPercent = Math.floor((defaultRate - rateValue) * 100);
+    const total = 100 - fillPercent + 10;
+
+    if (rateValue > 0) {
+      starElement.style.width = `${total}%`;
+    } else {
+      starElement.style.width = '0%';
+    }
+  });
+}
+
+updateStarRating();
 
 // countdown
 const countdownText = document.querySelector('.countdown');
@@ -48,47 +67,3 @@ infoName.addEventListener('click', function () {
     infoDownArrow.style.transform = 'rotate(0deg)';
   }
 });
-
-// top btn
-const topBtnWrap = document.querySelector('.top-btn-wrap');
-const topBtn = document.querySelector('.top-btn');
-
-let isHidden = true;
-
-// 이벤트 무한 호출 방지를 위한 throttling
-function throttle(callback, delay = 100) {
-  let isThrottled;
-
-  return (...args) => {
-    if (!isThrottled) {
-      isThrottled = setTimeout(() => {
-        isThrottled = null;
-        callback(...args);
-      }, delay);
-    }
-  };
-}
-
-// 스크롤의 위치에 따라 top-button 보이기/숨기기
-function updateVisibilityButton(scrollY) {
-  if (scrollY >= 400 && isHidden) {
-    topBtnWrap.classList.remove('hidden');
-    isHidden = false;
-  } else if (scrollY < 400 && !isHidden) {
-    topBtnWrap.classList.add('hidden');
-    isHidden = true;
-  }
-}
-
-const throttledScrollHandler = throttle(scrollY => updateVisibilityButton(scrollY));
-
-topBtn.addEventListener('click', function () {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY;
-  throttledScrollHandler(scrollY);
-});
-
-updateVisibilityButton(window.scrollY);
