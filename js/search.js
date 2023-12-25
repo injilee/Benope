@@ -14,7 +14,7 @@ let listX = 0;
 
 const getClientX = e => {
   const isTouches = e.touches ? true : false;
-  return isTouches ? e.touches[0].clientX : e.clientX;
+  return isTouches ? e.changedTouches[0].clientX : e.clientX;
 };
 
 const getTranslateX = () => {
@@ -42,7 +42,6 @@ function containerOnScrollMove(e) {
 
 function containerOnScrollEnd(e) {
   endX = getClientX(e);
-  console.log(endX);
   listX = getTranslateX();
 
   if (listX > 0) {
