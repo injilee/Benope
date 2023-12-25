@@ -3,6 +3,8 @@ const searchTopBtn = document.querySelector('.search-top-btn');
 const searchBox = document.querySelector('.search-box');
 const recentContainer = document.querySelector('.swiper');
 const recentinner = recentContainer.querySelector('.recent-content');
+const input = document.querySelector('.search-input');
+const deleteBtn = document.querySelector('.search-delete-btn');
 
 const containerScrollWidth = recentinner.scrollWidth;
 const containerClientWidth = recentinner.clientWidth;
@@ -12,6 +14,16 @@ let nowX = 0;
 let endX = 0;
 let listX = 0;
 
+// input 검색어 삭제 버튼
+deleteBtn.addEventListener('click', () => {
+  let inputText = input.value;
+  if (!inputText) {
+    return;
+  }
+  input.value = null;
+});
+
+// swiper 관련 함수 선언
 const getClientX = e => {
   const isTouches = e.touches ? true : false;
   return isTouches ? e.changedTouches[0].clientX : e.clientX;
