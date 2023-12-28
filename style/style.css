@@ -20,12 +20,17 @@ body::-webkit-scrollbar {
 a {
   text-decoration: none;
   color: inherit;
+  -webkit-user-drag: none;
 }
 
 button {
   background-color: transparent;
   border: none;
   cursor: pointer;
+}
+
+img {
+  -webkit-user-drag: none;
 }
 
 :is(ul, li) {
@@ -115,7 +120,6 @@ button {
 
 .recent-list a {
   display: block;
-  -webkit-user-drag: none;
 }
 
 .recent-list img {
@@ -123,7 +127,6 @@ button {
   width: 112px;
   height: 100%;
   border-radius: 10px;
-  -webkit-user-drag: none;
 }
 
 /* header */
@@ -494,8 +497,32 @@ button {
 
 .slider-wrapper {
   width: 100%;
-  overflow: hidden;
   border-radius: 0 0 20px 0;
+  overflow: hidden;
+}
+
+.slider-content {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.slider-content.dragging .slider-item,
+.slider-content.dragging .slider-item a {
+  cursor: grab;
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+}
+
+.slider-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .slider-item img {
