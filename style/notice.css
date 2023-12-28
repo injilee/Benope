@@ -1,0 +1,111 @@
+/* main */
+.main {
+  padding: 0;
+}
+
+/* sub-notice */
+.sub-notice {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 48px;
+}
+
+.sub-notice-top {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-top: 24px;
+}
+
+.sub-notice-top .main-title {
+  width: 100%;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 0;
+}
+
+.sub-notice-top .main-title .t01 {
+  padding-bottom: 24px;
+  text-align: center;
+}
+
+.sub-notice-top .main-title .prev-page {
+  position: absolute;
+  top: 20px;
+  left: 5%;
+}
+
+.sub-notice-top .main-title .prev-page img {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+/* board-notice */
+.board-notice {
+  background-color: var(--color-background);
+}
+
+.board {
+  background-color: var(--color-white);
+}
+
+.board-notice-list,
+.board-list {
+  color: var(--color-darkgray);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.board-notice-list:hover,
+.board-list:hover {
+  background-color: var(--color-countdown-box);
+}
+
+.board-notice-top {
+  padding: 24px;
+}
+
+.board-title {
+  font-size: var(--font-size-14);
+  font-weight: 700;
+  line-height: var(--font-line-height-14);
+  color: var(--color-primary);
+  padding-bottom: 8px;
+}
+
+.board-comment {
+  font-size: var(--font-size-14);
+  font-weight: 700;
+  line-height: var(--font-line-height-14);
+  color: var(--color-orange);
+  padding-right: 4px;
+}
+
+.board-subject .date,
+.board-subject .view,
+.board-subject .view-count {
+  font-size: var(--font-size-13);
+  font-weight: 400;
+  color: var(--color-footergray);
+}
+
+.board-desc {
+  display: flex;
+  align-items: center;
+  height: 0;
+  padding: 0 24px;
+  background-color: var(--color-white);
+  overflow: hidden;
+  transition: height 200ms ease-in-out, overflow 200ms ease-in-out;
+  border-top: 1px solid var(--color-border);
+}
+
+.board-desc.active {
+  height: 100px;
+  overflow: visible;
+}
+
+.comment-count {
+  color: var(--color-blue);
+}
