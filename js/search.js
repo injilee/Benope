@@ -1,5 +1,6 @@
 const backBtn = document.querySelector('.back-btn');
 const searchTopBtn = document.querySelector('.search-top-btn');
+const searchFooterBtn = document.querySelector('.ft-search-btn');
 const searchBox = document.querySelector('.search-box');
 const recentContainer = document.querySelector('.swiper');
 const recentinner = recentContainer.querySelector('.recent-content');
@@ -106,5 +107,6 @@ function closeSearchBox() {
 
 backBtn.addEventListener('click', closeSearchBox);
 searchTopBtn.addEventListener('click', openSearchBox);
+searchFooterBtn.addEventListener('click', openSearchBox);
 
 bindEvents();

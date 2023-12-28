@@ -1,5 +1,6 @@
 const menuBtn = document.querySelector('.menu');
 const closeBtn = document.querySelector('.sidebar-close-btn');
+const categoryBtn = document.querySelector('.ft-category-btn');
 const sidebar = document.querySelector('.sidebar');
 const overlay = document.querySelector('.overlay');
 
@@ -19,4 +20,5 @@ function closeSidebar() {
 
 menuBtn.addEventListener('click', openSidebar);
 closeBtn.addEventListener('click', closeSidebar);
+categoryBtn.addEventListener('click', openSidebar);
 overlay.addEventListener('click', closeSidebar);
