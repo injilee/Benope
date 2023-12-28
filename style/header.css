@@ -59,6 +59,8 @@
 
 .header-content .logo img {
   display: block;
+  width: 100%;
+  height: auto;
 }
 
 .header-left {
@@ -94,6 +96,12 @@
 
 .header-right button:hover {
   background-color: var(--color-btngray);
+}
+
+.header-right button img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .cart-btn {
