@@ -168,6 +168,56 @@
   white-space: nowrap;
 }
 
+/* search-box */
+.search-recent {
+  padding-top: 32px;
+}
+
+.search-recent-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 16px;
+}
+
+.recent-title {
+  font-weight: 700;
+  font-size: var(--font-size-16);
+  line-height: var(--font-line-height-16);
+  color: var(--color-primary);
+}
+
+.swiper {
+  overflow: hidden;
+  margin: 0 20px;
+}
+
+.recent-content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transform: translate(0, 0);
+  transition-property: transform;
+  touch-action: pan-y;
+}
+
+.recent-list {
+  width: 112px;
+  margin-right: 8px;
+  user-select: none;
+}
+
+.recent-list a {
+  display: block;
+}
+
+.recent-list img {
+  display: block;
+  width: 112px;
+  height: 100%;
+  border-radius: 10px;
+}
+
 /* 상품리스트 */
 .prd-content {
   margin-top: 16px;
