@@ -1,3 +1,7 @@
+.main {
+  padding: 0;
+}
+
 /* prd-all */
 .prd-all {
   display: flex;
@@ -27,8 +31,8 @@
 
 .prd-all-top .main-title .prev-page {
   position: absolute;
-  top: 25%;
-  left: 0;
+  top: 20px;
+  left: 5%;
 }
 
 .prd-all-top .main-title .prev-page img {
@@ -38,6 +42,10 @@
 }
 
 /* prd-all-bottom */
+.prd-all-bottom {
+  padding: 0 20px;
+}
+
 .prd-all-content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
