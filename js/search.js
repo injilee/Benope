@@ -89,7 +89,7 @@ function containerOnClick(e) {
 
 const bindEvents = () => {
   recentinner.addEventListener('mousedown', containerOnScrollStart);
-  recentinner.addEventListener('touchstart', containerOnScrollStart);
+  recentinner.addEventListener('touchstart', containerOnScrollStart, { passive: true });
   recentinner.addEventListener('click', containerOnClick);
 };
 

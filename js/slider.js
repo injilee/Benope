@@ -45,11 +45,15 @@ slide.addEventListener('mouseup', e => {
 });
 
 // touch event
-slide.addEventListener('touchstart', e => {
-  startPoint = e.touches[0].pageX;
-  slide.classList.add('dragging');
-  clearInterval(timerId);
-});
+slide.addEventListener(
+  'touchstart',
+  e => {
+    startPoint = e.touches[0].pageX;
+    slide.classList.add('dragging');
+    clearInterval(timerId);
+  },
+  { passive: true },
+);
 
 slide.addEventListener('touchend', e => {
   endPoint = e.changedTouches[0].pageX;
