@@ -141,7 +141,15 @@ img {
 }
 
 .sub-category-item {
+  width: 100%;
+  height: auto;
   margin-bottom: 32px;
+}
+
+.sub-category-item a:hover img {
+  border: 2px dashed var(--color-orange);
+  border-radius: 50%;
+  background-color: transparent;
 }
 
 .sub-category-item a {
