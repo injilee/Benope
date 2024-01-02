@@ -1,8 +1,7 @@
-const board = document.querySelectorAll('.board-content');
-const panel = document.querySelectorAll('.board-desc');
+const board = $('.board-content');
 
-board.forEach(item => {
-  item.addEventListener('click', () => {
-    item.nextElementSibling.classList.toggle('active');
+board.each((index, item) => {
+  $(item).on('click', () => {
+    $(item).next().toggleClass('active');
   });
 });

@@ -1,14 +1,14 @@
-const backBtn = document.querySelector('.back-btn');
-const searchTopBtn = document.querySelector('.search-top-btn');
-const searchFooterBtn = document.querySelector('.ft-search-btn');
-const searchBox = document.querySelector('.search-box');
-const recentContainer = document.querySelector('.swiper');
-const recentinner = recentContainer.querySelector('.recent-content');
-const input = document.querySelector('.search-input');
-const deleteBtn = document.querySelector('.search-delete-btn');
+const backBtn = $('.back-btn');
+const searchTopBtn = $('.search-top-btn');
+const searchFooterBtn = $('.ft-search-btn');
+const searchBox = $('.search-box');
+const recentContainer = $('.swiper');
+const recentinner = recentContainer.find('.recent-content');
+const input = $('.search-input');
+const deleteBtn = $('.search-delete-btn');
 
-const containerScrollWidth = recentinner.scrollWidth;
-const containerClientWidth = recentinner.clientWidth;
+const containerScrollWidth = recentinner[0].scrollWidth;
+const containerClientWidth = recentinner[0].clientWidth;
 
 let startX = 0;
 let nowX = 0;
@@ -16,7 +16,7 @@ let endX = 0;
 let listX = 0;
 
 // input 검색어 삭제 버튼
-deleteBtn.addEventListener('click', () => {
+deleteBtn.on('click', () => {
   let inputText = input.value;
   if (!inputText) {
     return;
@@ -31,21 +31,21 @@ const getClientX = e => {
 };
 
 const getTranslateX = () => {
-  return parseInt(getComputedStyle(recentinner).transform.split(/[^\-0-9]+/g)[5]);
+  return parseInt(recentinner.css('transform').split(/[^\-0-9]+/g)[5]);
 };
 
 const setTranslateX = x => {
-  recentinner.style.transform = `translateX(${x}px)`;
+  recentinner.css('transform', `translateX(${x}px)`);
 };
 
 // 최근 본 상품 swipe
 function containerOnScrollStart(e) {
   startX = getClientX(e);
 
-  window.addEventListener('mouseup', containerOnScrollEnd);
-  window.addEventListener('touchend', containerOnScrollEnd);
-  window.addEventListener('mousemove', containerOnScrollMove);
-  window.addEventListener('touchmove', containerOnScrollMove);
+  $(window).on('mouseup', containerOnScrollEnd);
+  $(window).on('touchend', containerOnScrollEnd);
+  $(window).on('mousemove', containerOnScrollMove);
+  $(window).on('touchmove', containerOnScrollMove);
 }
 
 function containerOnScrollMove(e) {
@@ -59,25 +59,25 @@ function containerOnScrollEnd(e) {
 
   if (listX > 0) {
     setTranslateX(0);
-    recentinner.style.transition = 'all 0.3s ease';
+    recentinner.css('transition', 'all 0.3s ease');
     listX = 0;
   } else if (listX < containerClientWidth - containerScrollWidth) {
     setTranslateX(containerClientWidth - containerScrollWidth);
-    recentinner.style.transition = 'all 0.3s ease';
+    recentinner.css('transition', 'all 0.3s ease');
     listX = containerClientWidth - containerScrollWidth;
   }
 
-  window.removeEventListener('mousedown', containerOnScrollStart);
-  window.removeEventListener('touchstart', containerOnScrollStart);
-  window.removeEventListener('mousemove', containerOnScrollMove);
-  window.removeEventListener('touchmove', containerOnScrollMove);
-  window.removeEventListener('mouseup', containerOnScrollEnd);
-  window.removeEventListener('touchend', containerOnScrollEnd);
-  window.removeEventListener('click', containerOnClick);
+  $(window).off('mousedown', containerOnScrollStart);
+  $(window).off('touchstart', containerOnScrollStart);
+  $(window).off('mousemove', containerOnScrollMove);
+  $(window).off('touchmove', containerOnScrollMove);
+  $(window).off('mouseup', containerOnScrollEnd);
+  $(window).off('touchend', containerOnScrollEnd);
+  $(window).off('click', containerOnClick);
 
   setTimeout(() => {
     bindEvents();
-    recentinner.style.transition = '';
+    recentinner.css('transition', '');
   }, 300);
 }
 
@@ -88,25 +88,25 @@ function containerOnClick(e) {
 }
 
 const bindEvents = () => {
-  recentinner.addEventListener('mousedown', containerOnScrollStart);
-  recentinner.addEventListener('touchstart', containerOnScrollStart, { passive: true });
-  recentinner.addEventListener('click', containerOnClick);
+  recentinner.on('mousedown', containerOnScrollStart);
+  recentinner.on('touchstart', containerOnScrollStart, { passive: true });
+  recentinner.on('click', containerOnClick);
 };
 
 // 검색창 보이기
 function openSearchBox() {
-  searchBox.classList.add('active');
-  document.body.classList.add('notscroll');
+  searchBox.addClass('active');
+  $('body').addClass('notscroll');
 }
 
 // 검색창 숨기기
 function closeSearchBox() {
-  searchBox.classList.remove('active');
-  document.body.classList.remove('notscroll');
+  searchBox.removeClass('active');
+  $('body').removeClass('notscroll');
 }
 
-backBtn.addEventListener('click', closeSearchBox);
-searchTopBtn.addEventListener('click', openSearchBox);
-searchFooterBtn.addEventListener('click', openSearchBox);
+backBtn.on('click', closeSearchBox);
+searchTopBtn.on('click', openSearchBox);
+searchFooterBtn.on('click', openSearchBox);
 
 bindEvents();

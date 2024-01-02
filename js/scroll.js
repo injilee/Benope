@@ -1,8 +1,8 @@
-const headerMenu = document.querySelector('.header-content');
-const footerMenu = document.querySelector('.ft-nav');
-const gnb = document.querySelector('.gnb');
-const topBtnWrap = document.querySelector('.top-btn-wrap');
-const topBtn = document.querySelector('.top-btn');
+const headerMenu = $('.header-content');
+const footerMenu = $('.ft-nav');
+const gnb = $('.gnb');
+const topBtnWrap = $('.top-btn-wrap');
+const topBtn = $('.top-btn');
 
 let lastScrollY = 0;
 let isHidden = true;
@@ -13,15 +13,15 @@ function getDirectionScroll(scrollY) {
   lastScrollY = scrollY;
 
   if (direction && scrollY !== 0) {
-    headerMenu.classList.add('fixed');
-    footerMenu.classList.add('hidden');
-    gnb.style.opacity = '0';
-    document.body.style.top = '56px';
+    headerMenu.addClass('fixed');
+    footerMenu.addClass('hidden');
+    gnb.css('opacity', '0');
+    $('body').css('top', '56px');
   } else {
-    headerMenu.classList.remove('fixed');
-    footerMenu.classList.remove('hidden');
-    gnb.style.opacity = '1';
-    document.body.style.top = '0';
+    headerMenu.removeClass('fixed');
+    footerMenu.removeClass('hidden');
+    gnb.css('opacity', '1');
+    $('body').css('top', '0');
   }
 }
 
@@ -42,10 +42,10 @@ function throttle(callback, delay = 100) {
 // 스크롤의 위치에 따라 top-button 보이기/숨기기
 function updateVisibilityButton(scrollY) {
   if (scrollY >= 400 && isHidden) {
-    topBtnWrap.classList.remove('hidden');
+    topBtnWrap.removeClass('hidden');
     isHidden = false;
   } else if (scrollY < 400 && !isHidden) {
-    topBtnWrap.classList.add('hidden');
+    topBtnWrap.addClass('hidden');
     isHidden = true;
   }
 }
@@ -55,13 +55,13 @@ const throttledScrollHandler = throttle(scrollY => {
   getDirectionScroll(scrollY);
 });
 
-topBtn.addEventListener('click', function () {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+topBtn.on('click', function () {
+  $('html, body').animate({ scrollTop: 0 }, 'slow');
 });
 
-window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY;
+$(window).on('scroll', () => {
+  const scrollY = $(window).scrollTop();
   throttledScrollHandler(scrollY);
 });
 
-updateVisibilityButton(window.scrollY);
+updateVisibilityButton($(window).scrollTop());

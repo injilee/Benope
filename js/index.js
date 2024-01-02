@@ -1,18 +1,18 @@
 // 별점 점수에 따라 자동으로 fill-rate width 값 변경하는 함수
-const rate = document.querySelectorAll('.rate');
+const rate = $('.rate');
 
 function updateStarRating() {
-  rate.forEach(item => {
-    const starElement = item.previousElementSibling.lastElementChild;
-    const rateValue = item.textContent.trim();
+  rate.each((index, item) => {
+    const starElement = $(item).prev().find(':last-child')[0];
+    const rateValue = $(item).text().trim();
     const defaultRate = 5;
     const fillPercent = Math.floor((defaultRate - rateValue) * 100);
     const total = 100 - fillPercent + 10;
 
     if (rateValue > 0) {
-      starElement.style.width = `${total}%`;
+      $(starElement).css('width', `${total}%`);
     } else {
-      starElement.style.width = '0%';
+      $(starElement).css('width', '0%');
     }
   });
 }
@@ -20,18 +20,18 @@ function updateStarRating() {
 updateStarRating();
 
 // 사업자 정보 drawer
-const infoName = document.querySelector('.ft-info-name');
-const infoDownArrow = infoName.querySelector('img');
-const infoList = document.querySelector('.ft-info');
+const infoName = $('.ft-info-name');
+const infoDownArrow = infoName.find('img');
+const infoList = $('.ft-info');
 
-infoName.addEventListener('click', function () {
-  infoList.classList.toggle('is-open');
+infoName.on('click', function () {
+  infoList.toggleClass('is-open');
 
-  if (infoList.classList.contains('is-open')) {
-    infoList.style.paddingBottom = '16px';
-    infoDownArrow.style.transform = 'rotate(180deg)';
+  if (infoList.hasClass('is-open')) {
+    infoList.css('padding-bottom', '16px');
+    infoDownArrow.css('transform', 'rotate(180deg)');
   } else {
-    infoList.style.paddingBottom = '0';
-    infoDownArrow.style.transform = 'rotate(0deg)';
+    infoList.css('padding-bottom', '0');
+    infoDownArrow.css('transform', 'rotate(0deg)');
   }
 });

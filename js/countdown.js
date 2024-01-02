@@ -1,5 +1,5 @@
 // countdown
-const countdownText = document.querySelector('.countdown');
+const countdownText = $('.countdown');
 
 function updateCountdown() {
   const countdownDate = Date.parse('2024/01/31 24:00:00');
@@ -20,9 +20,9 @@ function updateCountdown() {
 
   if (timeDown <= 0) {
     clearInterval(timeInterval);
-    countdownText.textContent = '타임 종료';
+    countdownText.text('타임 종료');
   } else {
-    countdownText.textContent = `${d}일 ${h}:${m}:${s} 남음`;
+    countdownText.text(`${d}일 ${h}:${m}:${s} 남음`);
   }
 }
 
