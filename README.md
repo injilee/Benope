@@ -2,7 +2,12 @@
 
 [Visit Benope](https://injilee.github.io/Benope/)
 
----
+## Skills
+
+- HTML5
+- CSS
+- Javascript
+- jQuery
 
 #### 피그마 디자인 시안
 
