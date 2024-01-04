@@ -46,19 +46,15 @@ slide.on('mouseup', e => {
 });
 
 // touch event
-slide.on(
-  'touchstart',
-  e => {
-    startPoint = e.touches[0].pageX;
-    slide.addClass('dragging');
-    clearInterval(timerId);
-  },
-  { passive: true },
-);
+slide.on('touchstart', function (e) {
+  startPoint = e.touches[0].pageX;
+  slide.addClass('dragging');
+  clearInterval(timerId);
+});
 
-slide.on('touchend', e => {
+slide.on('touchend', function (e) {
   endPoint = e.changedTouches[0].pageX;
-  slide.classList.remove('dragging');
+  slide.removeClass('dragging');
   timerId = setInterval(nextMove, 4000);
 
   if (startPoint < endPoint) {
