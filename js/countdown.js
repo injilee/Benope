@@ -2,7 +2,7 @@
 const countdownText = $('.countdown');
 
 function updateCountdown() {
-  const countdownDate = Date.parse('2024/02/28 24:00:00');
+  const countdownDate = Date.parse('2024/03/01 24:00:00');
   const now = new Date();
   const diff = countdownDate - now;
 
