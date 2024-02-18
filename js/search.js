@@ -1,7 +1,13 @@
+// 모달창
+const searchBox = $('.search-box');
+
+// 모달창 닫기 버튼
 const backBtn = $('.back-btn');
+
+// 모달창 열기 버튼
 const searchTopBtn = $('.search-top-btn');
 const searchFooterBtn = $('.ft-search-btn');
-const searchBox = $('.search-box');
+
 const recentContainer = $('.swiper');
 const recentinner = recentContainer.find('.recent-content');
 const input = $('.search-input');
@@ -14,6 +20,7 @@ let startX = 0;
 let nowX = 0;
 let endX = 0;
 let listX = 0;
+let focusedElementModal;
 
 // input 검색어 삭제 버튼
 deleteBtn.on('click', () => {
@@ -95,14 +102,49 @@ const bindEvents = () => {
 
 // 검색창 보이기
 function openSearchBox() {
+  focusedElementModal = document.activeElement;
+
+  // // 포커스 가능한 요소들
+  let focusableEls = $(searchBox).find(
+    'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex], *[contentditable]',
+  );
+  focusableEls = Array.prototype.slice.call(focusableEls);
+  searchBox.on('keydown', trapTabKey);
+
+  const firstTabStop = focusableEls[0];
+  const lastTabStop = focusableEls[focusableEls.length - 1];
+  firstTabStop.focus();
+
   searchBox.addClass('active');
   $('body').addClass('notscroll');
+  searchBox.attr('aria-hidden', 'false');
+
+  // 포커스 트랩 이벤트
+  function trapTabKey(e) {
+    // check Tab key
+    if (e.keyCode === 9) {
+      if (document.activeElement === firstTabStop && e.shiftKey) {
+        e.preventDefault();
+        lastTabStop.focus();
+      } else if (document.activeElement === lastTabStop && !e.shiftKey) {
+        e.preventDefault();
+        firstTabStop.focus();
+      }
+    }
+
+    // ESCAPE
+    if (e.keyCode === 27) {
+      closeSearchBox();
+    }
+  }
 }
 
 // 검색창 숨기기
 function closeSearchBox() {
   searchBox.removeClass('active');
   $('body').removeClass('notscroll');
+  searchBox.attr('aria-hidden', 'true');
+  focusedElementModal.focus();
 }
 
 backBtn.on('click', closeSearchBox);
