@@ -23,62 +23,6 @@
   </head>
   <body>
     <div class="wrap_box">
-      <div class="search-box">
-        <div class="search-box-wrap">
-          <form action="" class="search-form">
-            <button type="button" class="back-btn">뒤로가기</button>
-            <fieldset class="search-field">
-              <input class="search-input" type="text" placeholder="어떤 상품을 찾으시나요?"/>
-              <button class="search-delete-btn" type="button">검색어 삭제</button>
-            </fieldset>
-            <button class="search-btn" type="submit">검색</button>
-          </form>
-        </div>
-        <div class="search-recent">
-          <div class="search-recent-top">
-            <span class="recent-title">최근 본 상품</span>
-            <div class="all-view">
-              <a href="#none">
-                <span class="view-btn">전체보기</span>
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M7 11L10 8L7 5"
-                    stroke="#9A9A9A"
-                    stroke-width="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div class="swiper">
-            <ul class="recent-content">
-              <li class="recent-list">
-                <a draggable="none" href="#none">
-                  <img src="assets/img/img-product-03.jpg" alt="[베노프] 핑거팝 10개 묶음세트 단백질과자" width="250" height="250" >
-                </a>
-              </li>
-              <li class="recent-list">
-                <a draggable="none" href="#none">
-                  <img src="assets/img/img-product-05.jpg" alt="[3팩 골라담기] 베노프 프로틴바" width="250" height="250" >
-                </a>
-              </li>
-              <li class="recent-list">
-                <a draggable="none" href="#none">
-                  <img src="assets/img/img-product-04.jpg" alt="[베노프베이커리] 오트스콘" width="250" height="250" >
-                </a>
-              </li>
-              <li class="recent-list">
-                <a draggable="none" href="#none">
-                  <img src="assets/img/img-product-02.jpg" alt="베노프 소프트바 버라이어티팩" width="250" height="250" >
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      
       <header class="header">
         <!-- 이벤트 팝업 -->
         <div class="top-event">
@@ -109,20 +53,73 @@
           </h1>
 
           <div class="header-right">
-            <button class="search-top-btn" type="button" title="검색">
+            <a href="#none" class="search-top-btn" title="검색">
               <img src="assets/icon/ic-search.svg" alt="검색창 열기 버튼" width="32" height="32" />
-            </button>
-            <button class="cart-btn" type="button" title="장바구니">
-              <a href="#none">
-                <img src="assets/icon/ic-top-cart.svg" alt="장바구니 페이지로 이동 버튼" width="32" height="32" />
-              </a>
+            </a>
+            <a href="#none" class="cart-btn" title="장바구니">
+              <img src="assets/icon/ic-top-cart.svg" alt="장바구니 페이지로 이동 버튼" width="32" height="32" />
               <span class="badge">0</span>
-            </button>
-            <button class="proile-btn" type="button" title="마이페이지">
-              <a href="#none">
-                <img src="assets/icon/ic-profile.svg" alt="마이페이지로 이동 버튼" width="32" height="32" />
-              </a>
-            </button>
+            </a>
+            <a href="#none" class="proile-btn" title="마이페이지">
+              <img src="assets/icon/ic-profile.svg" alt="마이페이지로 이동 버튼" width="32" height="32" />
+            </a>
+          </div>
+        </div>
+
+        <!-- 검색창 모달 -->
+        <div class="search-box" aria-hidden="true">
+          <div class="search-box-wrap">
+            <form action="" class="search-form">
+              <button type="button" class="back-btn">뒤로가기</button>
+              <fieldset class="search-field">
+                <input class="search-input" type="text" placeholder="어떤 상품을 찾으시나요?"/>
+                <button class="search-delete-btn" type="button">검색어 삭제</button>
+              </fieldset>
+              <button class="search-btn" type="submit">검색</button>
+            </form>
+          </div>
+          <div class="search-recent">
+            <div class="search-recent-top">
+              <span class="recent-title">최근 본 상품</span>
+              <div class="all-view">
+                <a href="#none">
+                  <span class="view-btn">전체보기</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M7 11L10 8L7 5"
+                      stroke="#9A9A9A"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="swiper">
+              <ul class="recent-content">
+                <li class="recent-list">
+                  <a draggable="none" href="#none">
+                    <img src="assets/img/img-product-03.jpg" alt="[베노프] 핑거팝 10개 묶음세트 단백질과자" width="250" height="250" >
+                  </a>
+                </li>
+                <li class="recent-list">
+                  <a draggable="none" href="#none">
+                    <img src="assets/img/img-product-05.jpg" alt="[3팩 골라담기] 베노프 프로틴바" width="250" height="250" >
+                  </a>
+                </li>
+                <li class="recent-list">
+                  <a draggable="none" href="#none">
+                    <img src="assets/img/img-product-04.jpg" alt="[베노프베이커리] 오트스콘" width="250" height="250" >
+                  </a>
+                </li>
+                <li class="recent-list">
+                  <a draggable="none" href="#none">
+                    <img src="assets/img/img-product-02.jpg" alt="베노프 소프트바 버라이어티팩" width="250" height="250" >
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
