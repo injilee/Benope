@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Benope</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
+    <link rel="manifest" href="./site.webmanifest" />
+    <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#4f4b41" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/static/woff2/SUIT.css" rel="stylesheet">
+    <link rel="stylesheet" href="style/reset.css" />
+    <link rel="stylesheet" href="style/common.css" />
+    <link rel="stylesheet" href="style/header.css" />
+    <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/footer.css" />
+    <link rel="stylesheet" href="style/prd-all.css" />
+    <link rel="stylesheet" href="style/sub.css" />
+    <link rel="stylesheet" href="style/media-query.css" />
+    <script src="lib/jquery-3.7.1.min.js"></script>
+  </head>
+  <body>
+    <div class="wrap_box">
+      <header class="header">
+        <!-- 이벤트 팝업 -->
+        <div class="top-event">
+          <a href="#none" aria-label="베노프 공식 카카오톡 채널로 이동하기"
+            >카카오톡 채널 추가 시 <span>2,000원</span> 쿠폰 100% 증정</a
+          >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M7 11L10 8L7 5"
+              stroke="#9A9A9A"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+
+        <!-- header  -->
+        <div class="header-content">
+          <div class="header-left">
+            <button class="menu" type="button" title="메뉴">
+              <img src="assets/icon/ic-menu.svg" alt="메뉴 열기 버튼" />
+            </button>
+          </div>
+
+          <h1 class="logo" title="베노프">
+            <a href="./index.html" aria-label="홈으로 이동"><img src="assets/img/logo.png" alt="Benope" width="100" height="100" /></a>
+          </h1>
+
+          <div class="header-right">
+            <a href="#none" class="search-top-btn" title="검색">
+              <img src="assets/icon/ic-search.svg" alt="검색창 열기 버튼" width="32" height="32" />
+            </a>
+            <a href="#none" class="cart-btn" title="장바구니">
+              <img src="assets/icon/ic-top-cart.svg" alt="장바구니 페이지로 이동 버튼" width="32" height="32" />
+              <span class="badge">0</span>
+            </a>
+            <a href="#none" class="proile-btn" title="마이페이지">
+              <img src="assets/icon/ic-profile.svg" alt="마이페이지로 이동 버튼" width="32" height="32" />
+            </a>
+          </div>
+        </div>
+
+        <!-- 검색창 모달 -->
+        <div class="search-box" aria-hidden="true">
+          <div class="search-box-wrap">
+            <form action="" class="search-form">
+              <button type="button" class="back-btn">뒤로가기</button>
+              <fieldset class="search-field">
+                <input class="search-input" type="text" placeholder="어떤 상품을 찾으시나요?"/>
+                <button class="search-delete-btn" type="button">검색어 삭제</button>
+              </fieldset>
+              <button class="search-btn" type="submit">검색</button>
+            </form>
+          </div>
+          <div class="search-recent">
+            <div class="search-recent-top">
+              <span class="recent-title">최근 본 상품</span>
+              <div class="all-view">
+                <a href="#none">
+                  <span class="view-btn">전체보기</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M7 11L10 8L7 5"
+                      stroke="#9A9A9A"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <div class="swiper">
+              <ul class="recent-content">
+                <li class="recent-list">
+                  <a draggable="none" href="#none">
+                    <img src="assets/img/img-product-03.jpg" alt="[베노프] 핑거팝 10개 묶음세트 단백질과자" width="250" height="250" >
+                  </a>
+                </li>
+                <li class="recent-list">
+                  <a draggable="none" href="#none">
+                    <img src="assets/img/img-product-05.jpg" alt="[3팩 골라담기] 베노프 프로틴바" width="250" height="250" >
+                  </a>
+                </li>
+                <li class="recent-list">
+                  <a draggable="none" href="#none">
+                    <img src="assets/img/img-product-04.jpg" alt="[베노프베이커리] 오트스콘" width="250" height="250" >
+                  </a>
+                </li>
+                <li class="recent-list">
+                  <a draggable="none" href="#none">
+                    <img src="assets/img/img-product-02.jpg" alt="베노프 소프트바 버라이어티팩" width="250" height="250" >
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 네비게이션 메뉴 -->
+        <nav class="gnb">
+          <h2 class="visually-hidden">menu</h2>
+          <ul class="gnb-content">
+            <li class="gnb-list">
+              <a href="./prd-all.html">전체상품</a>
+            </li>
+            <li class="gnb-list">
+              <a href="./best.html">베스트</a>
+            </li>
+            <li class="gnb-list">
+              <a href="#none">고객후기</a>
+            </li>
+            <li class="gnb-list">
+              <a href="./notice.html">공지사항</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <!-- 사이드바 메뉴 -->
+      <aside class="sidebar">
+        <h2 class="visually-hidden">menu</h2>
+        <div class="sidebar-header">
+          <div class="login">
+            <a href="#none">
+              <strong class="login-title">로그인&#47;회원가입</strong>
+              <span class="login-benefit"
+                >회원가입시 다양한 혜택 증정!
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M7 11L10 8L7 5"
+                    stroke="#9A9A9A"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+            </a>
+            </span>
+          </div>
+
+          <div class="notice">
+            <div class="news-box">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M18.1931 8.16065C18.9522 9.24894 19.3974 10.5725 19.3974 12C19.3974 13.4275 18.9522 14.7511 18.1931 15.8394M12.3277 5.63213L9.28916 8.67068C9.12316 8.83668 9.04015 8.91969 8.94329 8.97904C8.85741 9.03167 8.76378 9.07045 8.66584 9.09397C8.55538 9.12049 8.438 9.12049 8.20323 9.12049H6.53574C5.99818 9.12049 5.7294 9.12049 5.52408 9.2251C5.34348 9.31712 5.19664 9.46396 5.10462 9.64457C5 9.84989 5 10.1187 5 10.6562V13.3438C5 13.8813 5 14.1501 5.10462 14.3554C5.19664 14.536 5.34348 14.6829 5.52408 14.7749C5.7294 14.8795 5.99818 14.8795 6.53574 14.8795H8.20323C8.438 14.8795 8.55538 14.8795 8.66584 14.906C8.76378 14.9295 8.85741 14.9683 8.94329 15.021C9.04015 15.0803 9.12316 15.1633 9.28916 15.3293L12.3277 18.3679C12.7389 18.779 12.9445 18.9846 13.121 18.9985C13.2741 19.0106 13.4238 18.9486 13.5236 18.8318C13.6385 18.6971 13.6385 18.4064 13.6385 17.8249V6.1751C13.6385 5.59361 13.6385 5.30287 13.5236 5.16824C13.4238 5.05142 13.2741 4.98943 13.121 5.00148C12.9445 5.01537 12.7389 5.22096 12.3277 5.63213Z"
+                  stroke="#FF7B43"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <ul class="news-content">
+                <li class="news-list">
+                  <a href="./notice.html">
+                    <strong class="news-title">공지 +</strong>
+                    <p class="news-description">🎄🎅🏻🎄</p>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-main">
+          <article class="category">
+            <h3 class="category-title">전체 카테고리</h3>
+            <ul class="category-content">
+              <li class="category-list">
+                <a href="./prd-all.html">
+                  <img src="assets/img/menu-all.png" alt="전체보기" width="40" height="40" />
+                  <span aria-hidden="true">전체보기</span>
+                </a>
+              </li>
+              <li class="category-list">
+                <a href="#none">
+                  <img src="assets/img/img-menu-04.png" alt="프로틴바" width="40" height="40" />
+                  <span aria-hidden="true">프로틴바</span>
+                </a>
+              </li>
+              <li class="category-list">
+                <a href="#none">
+                  <img src="assets/img/img-menu-03.png" alt="베이커리" width="40" height="40" />
+                  <span aria-hidden="true">베이커리</span>
+                </a>
+              </li>
+              <li class="category-list">
+                <a href="#none">
+                  <img src="assets/img/img-menu-02.png" alt="프로틴스낵" width="40" height="40" />
+                  <span aria-hidden="true">프로틴스낵</span>
+                </a>
+              </li>
+              <li class="category-list">
+                <a href="#none">
+                  <img src="assets/img/img-menu-01.png" alt="단백질쉐이크" width="40" height="40" />
+                  <span aria-hidden="true">단백질쉐이크</span>
+                </a>
+              </li>
+            </ul>
+          </article>
+
+
+          <article class="community">
+            <h3 class="community-title">커뮤니티</h3>
+            <ul class="community-content">
+              <li class="community-list">
+                <a href="./notice.html">공지사항</a>
+              </li>
+              <li class="community-list">
+                <a href="./notice.html">이벤트</a>
+              </li>
+              <li class="community-list">
+                <a href="#none">구매후기</a>
+              </li>
+              <li class="community-list">
+                <a href="#none">자주 묻는 질문</a>
+              </li>
+              <li class="community-list">
+                <a href="#none">1:1 문의</a>
+              </li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="sidebar-footer">
+          <a href="#none" class="login-btn">마이페이지</a>
+          <a class="login-btn" href="#none">로그인</a>
+        </div>
+
+        <button class="sidebar-close-btn" aria-label="메뉴창 닫기 버튼">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M19 5L5 19M5 5L19 19"
+              stroke="#1A1A1A"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+        </button>
+      </aside>
+
+      <main class="main">
+        <section class="prepar">
+          <div class="prepar-box">
+            <img class="prepar-img" src="./assets/img/img-preparation.png" />
+          </div>
+          <div class="prepar-text">
+            <h2 class="prepar-title">현재 <strong>페이지 준비중</strong> 입니다.</h2>
+            <p class="prepar-desc">보다 나은 서비스 제공을 위하여 페이지 준비중에 있습니다.</p>
+            <p class="prepar-desc">빠른 시일내에 준비하여 찾아뵙겠습니다.</p>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-wrap">
+          <section class="ft-sec01">
+            <div class="ft-cs">
+              <span class="cs-title">고객센터</span>
+              <a class="cs-tel" href="tel:070-7764-0701">
+                070-7764-0701
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M7 11L10 8L7 5" stroke="#9A9A9A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+              </a>
+            </div>
+            <div class="cs-sub">
+              <p class="cs-time">평일 오전 11시 ~ 오후 5시 (주말/공휴일 휴무)</p>
+              <p class="cs-time">점심 오후 12시 ~ 오후 1시 반</p>
+            </div>
+            
+            <div class="ft-qna">
+              <a class="qna-btn" href="#none">1:1 문의</a>
+            </div>
+          </section>
+
+          <section class="ft-sec02">
+            <div class="ft-sec02-wrap">
+              <div class="ft-info-name">
+                <strong class="info-benope">(주)베노프하우스 사업자 정보</strong>
+                <img src="assets/icon/ic-down-arrow.svg" alt="(주)베노프하우스 사업자 정보 더보기">
+              </div>
+
+              <div class="ft-info">
+                <ul class="ft-info-content">
+                  <li class="ft-info-list">
+                    <p><span class="info-hightlight">대표이사 :</span>소병호</p>
+                  </li>
+                  <li class="ft-info-list">
+                    <p>
+                      <span class="info-hightlight">사업자등록번호 : </span>
+                      254-81-02055
+                      <a class="business-info" href="#none">
+                        [사업자정보확인]
+                      </a>
+                    </p>
+                  </li>
+                  <li class="ft-info-list">
+                    <p><span class="info-hightlight">통신판매업신고 :</span> 2021-인천남동구-1193</p>
+                  </li>
+                  <li class="ft-info-list">
+                    <p><span class="info-hightlight">주소 :</span>
+                      21540 지하1층, 1층, 2층, 인천광역시 남동구 소래로687번길 33 (만수동)</p>
+                  </li>
+                  <li class="ft-info-list">
+                    <p><span class="info-hightlight">전화번호 :</span>
+                      070-7764-0701</p>
+                  </li>
+                  <li class="ft-info-list">
+                    <p class="info-hightlight">Copyright © BENOPE. All rights reserved.Designed by morenvy</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="ft-menu">
+              <ul class="ft-menu-content">
+                <li class="ft-menu-list">
+                  <a href="#none">회사소개</a>
+                  <span class="line"></span>
+                </li>
+                <li class="ft-menu-list">
+                  <a href="#none">이용약관</a>
+                  <span class="line"></span>
+                </li>
+                <li class="ft-menu-list">
+                  <a href="#none">
+                    <strong>개인정보처리방침</strong>
+                  </a>
+                  <span class="line"></span>
+                </li>
+                <li class="ft-menu-list">
+                  <a href="#none">이용안내</a>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </footer>
+
+      <div class="ft-nav hidden">
+        <ul class="ft-nav-content">
+          <li class="ft-nav-list">
+            <a href="./index.html">
+              <img src="assets/icon/ic-home.svg" alt="홈화면으로 이동">
+              <span class="ft-nav-menu">홈</span>
+            </a>
+          </li>
+          <li class="ft-nav-list">
+            <a class="ft-category-btn" href="#none">
+              <img src="assets/icon/ic-category.svg" alt="메뉴창 열기">
+              <span class="ft-nav-menu">카테고리</span>
+            </a>
+          </li>
+          <li class="ft-nav-list">
+            <a class="ft-search-btn" href="#none">
+              <img src="assets/icon/ic-search.svg" alt="검색창 열기">
+              <span class="ft-nav-menu">검색</span>
+            </a>
+          </li>
+          <li class="ft-nav-list">
+            <a href="#none">
+              <img src="assets/icon/ic-bottom-cart.svg" alt="장바구니 페이지로 이동">
+              <span class="ft-nav-menu">장바구니</span>
+            </a>
+          </li>
+          <li class="ft-nav-list">
+            <a href="#none">
+              <img src="assets/icon/ic-profile.svg" alt="마이페이지로 이동">
+              <span class="ft-nav-menu">마이페이지</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="top-btn-wrap hidden">
+      <a class="top-btn" href="#none">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="47" height="47" rx="23.5" fill="white"></rect><path d="M24 30.6667V17.3334M24 17.3334L19 22.3334M24 17.3334L29 22.3334" stroke="#1A1A1A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path><rect x="0.5" y="0.5" width="47" height="47" rx="23.5" stroke="#EDEDED"></rect>
+        </svg>
+      </a>
+    </div>
+    <div class="overlay"></div>
+    <script defer src="js/index.js"></script>
+    <script defer src="js/sidebar.js"></script>
+    <script defer src="js/search.js"></script>
+    <script defer src="js/scroll.js"></script>
+  </body>
+</html>
